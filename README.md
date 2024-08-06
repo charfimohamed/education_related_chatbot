@@ -1,18 +1,55 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/NXyI9KHk)
-# CS-552 - Final submission
+# EPFL MISTRAL MIND CHATBOT
 
-Welcome to the final step of your MNLP project! As you can read in the [project description](https://docs.google.com/document/d/1SP8SCHPOZZGEhs2ay-38FjedRE1bS9Q99VJb28eHoYk/edit?usp=sharing), you have 2 main deliverables: 
-1. Your final model - including its augmented counterpart(s)
-3. The final report
+## Project Information
+- **Project Title:** EPFL Mistral Mind Chatbot
+- **Authors:**
+  - Mohamed Charfi
+  - Yacine Chaouch
+  - Aziz Laadhar
 
+## Introduction
+The EPFL Chatbot is a specialized language model developed to address the limitations of general-purpose large language models (LLMs) in educational settings. The chatbot is tailored to the curriculum of EPFL, using fine-tuning and RAG techniques to leverage relevant data sources. This approach aims to create a customized tool that meets the specific needs of EPFL students.
 
-## Repo Structure
+## Methodology
+### Data Collection and Training
+- **Data Sources:** EPFL-specific resources, Anthropic HH RLHF dataset, MMLU-STEM, GSM8K, EPFL Preference Dataset, SetFit dataset.
+- **Training Techniques:**
+  - **Direct Preference Optimization (DPO):** Ensures coherent and ethical responses.
+  - **Supervised Fine-Tuning (SFT):** Specializes the model in handling multiple-choice questions.
+  - **Retrieval-Augmented Generation (RAG):** Integrates dynamic information retrieval to enhance context-awareness.
 
-The repo has 4 folders, 2 of which serve for you to submit the deliverables:
-1. `_templates` contains the latex template for your final report. You MUST use this template.
-2. `_tests` contains some scripts which run automated tests so you can be sure your submission is correctly formatted (e.g., that the right files exist in the right place). **Importantly, if your team is NOT implementing RAG, you should change the first line of `_tests/model_rag_validator.py` into `IMPLEMENTING_RAG = False`.**
-3. `model` should contain your final models and your model-related implementation files (this includes any file for training, inference, quantization, RAG, and other necessary functions needed for the evaluator to execute successfully). Your implementation should be compatible with the [provided code template](https://github.com/CS-552/project-code-2024).
-4. `pdfs` should contain a single pdf file, your final report (named `<YOUR-GROUP-NAME>.pdf`).
+### Model Training
+- **Base Model:** Mistral 7B
+- **Techniques Used:**
+  - Fine-tuning with DPO and RAG
+  - Quantization for efficiency
+  - SFT using LoRA adapters
 
-## Running the tests manually
-The autograding tests run automatically with every commit to the repo. Please check M1's repo for instructions on running the tests manually if you wish to do so.
+## Experiments
+### MCQ Specialization
+- **Dataset:** 6,000 samples from the SciQ dataset, randomized correct answer placement.
+- **Results:** Effective fine-tuning with specific hyper-parameter settings for LoRA.
+
+### RAG Implementation
+- **Data Collection:** EPFL textbooks and student notes.
+- **Embedding Model:** "all-mpnet-base-v2" from sentence-transformers.
+- **Chunking:** Text broken into 200-word chunks with a 50-word overlap.
+- **Retrieval Process:** Semantic search to find and concatenate relevant chunks with the prompt.
+
+## Evaluation
+- **Dataset:** 300 MCQ questions curated from previous exams.
+- **Models Compared:** Base Mistral, Mistral + DPO, Mistral + RAG, Mistral + DPO + RAG.
+- **Results:** Modest improvements with DPO and RAG.
+
+## Ethical Considerations
+- **Data Privacy:** Access restricted to EPFL students.
+- **Bias and Fairness:** Ensured through diverse training data and ethical guidelines.
+- **Transparency:** Documentation of capabilities and limitations.
+- **Accessibility:** Future work includes integrating sign language recognition.
+
+## Conclusion
+The EPFL Chatbot demonstrates the potential of specialized language models in educational settings. While initial results show modest improvements with DPO and RAG, further refinement is needed for substantial gains. The project contributes to the development of effective, domain-specific educational tools.
+
+---
+
+For more details, please refer to the report
