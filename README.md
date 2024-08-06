@@ -52,4 +52,4 @@ The EPFL Chatbot demonstrates the potential of specialized language models in ed
 
 ---
 
-For more details, please refer to the report
+For more details, please refer to the report [here](https://github.com/charfimohamed/education_related_chatbot/blob/main/pdfs/lasmer.pdf).
