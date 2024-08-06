@@ -1,0 +1,16 @@
+"team_name": "Lasmer" # Your team name
+"eval_method": ["mcqa"] # mcqa, reward, rag, compression
+"task_type": "causal_lm" # causal_lm, seq2seq
+"policy_model_path": "yassinechaouch/Mistral-merged-with-Lora" # Mistral + DPO
+#"policy_model_path": "cognitivecomputations/dolphin-2.1-mistral-7b" # base model
+
+"reference_model_path": "cognitivecomputations/dolphin-2.1-mistral-7b" # The repo id of your pretrained reference model
+"quantized_policy_model_path": null # Your path to the final quantized checkpoint
+"rag_policy_model_path": null # Your path to the final RAG checkpoint
+"test_data_path": "datasets/evaluation_dataset/mcqa_final_evaluation.json" # Your path to the test data
+"dpo_model_args": null # Put any model arguments required to load your DPO model below
+"rag_model_args": # Put any model arguments required to load your rag model below
+  "encoder_model_path": "" 
+  "retriever_model_path": ""
+  "document_dir": ""
+"quantized_model_args": null # Put any model arguments required to load your quantized model below

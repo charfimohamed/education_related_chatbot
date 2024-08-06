@@ -1,0 +1,16 @@
+transformers
+trl
+peft
+accelerate
+datasets
+bitsandbytes
+scipy
+sentencepiece
+gradio
+evaluate
+nltk
+tensorboard
+wandb
+optimum
+torch
+pymupdf
